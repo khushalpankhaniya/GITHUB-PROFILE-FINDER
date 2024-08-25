@@ -1,12 +1,10 @@
 {
   "name": "github-profile-finder",
-  "homepage": "https://khushalpankhaniya.github.io/GITHUB-PROFILE-FINDER",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
