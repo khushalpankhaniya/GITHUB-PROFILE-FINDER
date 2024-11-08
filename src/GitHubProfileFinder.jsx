@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import axios from 'axios';
 const GitHubProfileFinder = () => {
     const [username, setUsername] = useState('');
     const [userData, setUserData] = useState(null);
@@ -9,16 +9,17 @@ const GitHubProfileFinder = () => {
     const [isHistoryVisible, setIsHistoryVisible] = useState(false);
 
     const fetchGithubUserData = async () => {
+     
         try {
             setLoading(true);
-            const userRes = await fetch(`https://api.github.com/users/${username}`);
-            const userData = await userRes.json();
+            const userRes = await axios.get(`https://api.github.com/users/${username}`);
+            const userData = userRes.data;
 
             if (userData) {
                 setUserData(userData);
 
-                const followersRes = await fetch(`https://api.github.com/users/${username}/followers`);
-                const followersData = await followersRes.json();
+                const followersRes = await axios.get(`https://api.github.com/users/${username}/followers`);
+                const followersData = followersRes.data;
                 setFollowers(followersData);
 
                 setSearchHistory((prevHistory) => {
