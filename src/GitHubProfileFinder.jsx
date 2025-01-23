@@ -19,7 +19,7 @@ const GitHubProfileFinder = () => {
                 setUserData(userData);
 
                 const followersRes = await axios.get(`https://api.github.com/users/${username}/followers`);
-                const followersData = followersRes.data;
+                const followersData = followersRes.data
                 setFollowers(followersData);
 
                 setSearchHistory((prevHistory) => {

@@ -1,12 +1,9 @@
-import { useState } from 'react'
-
-import './App.css'
+import GitHubProfileFinder from './GitHubProfileFinder'
 
 function App() {
 
-
   return (
-    <h1>h</h1>
+<GitHubProfileFinder />
   )
 }
 
