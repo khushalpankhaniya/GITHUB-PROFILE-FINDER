@@ -9,7 +9,7 @@ const GitHubProfileFinder = () => {
     const [isHistoryVisible, setIsHistoryVisible] = useState(false);
 
     const fetchGithubUserData = async () => {
-     
+
         try {
             setLoading(true);
             const userRes = await axios.get(`https://api.github.com/users/${username}`);
@@ -65,8 +65,6 @@ const GitHubProfileFinder = () => {
                     Search
                 </button>
             </div>
-
-            {/* Toggle Search History Visibility */}
             <button
                 onClick={() => setIsHistoryVisible(!isHistoryVisible)}
                 className="text-blue-600 hover:underline mb-4"
